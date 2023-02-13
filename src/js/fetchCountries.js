@@ -5,7 +5,7 @@ export const fetchCountries = name => {
       .then(response => {
       if (!response.ok) {
         if (response.status === 404) {
-          return [];
+          return ;
         }
         throw new Error(response.status);
       }

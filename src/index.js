@@ -14,7 +14,7 @@ input.addEventListener(
       const trimmedValue = input.value.trim();
          cleanHtml();   
     if (trimmedValue !== '') {
-        fetchCountries(trimmedValue).then(foundData => {      
+        fetchCountries(trimmedValue).then(foundData => {
 
         if (foundData.length > 10) {
           Notiflix.Notify.info(
@@ -58,7 +58,7 @@ function renderOneCountry(countries) {
          <b>${country.name.official}</b></p>
             <p><b>Capital</b>: ${country.capital}</p>
             <p><b>Population</b>: ${country.population}</p>
-            <p><b>Languages</b>: ${Object.values(country.languages)} </p>
+            <p><b>Languages</b>: ${Object.values(country.languages).join(', ')} </p>
                 </li>`;
         })
         .join('');
